@@ -1,0 +1,14 @@
+
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 20px;
+  }
+  
+  strong {
+    font-size: 1.2em;
+  }
+  

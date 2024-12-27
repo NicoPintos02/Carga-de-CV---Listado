@@ -1,0 +1,15 @@
+<h2>Lista de Documentos</h2>
+
+<!-- Campo de búsqueda -->
+<input type="text" [(ngModel)]="keyword" placeholder="Buscar por palabra clave" />
+
+<!-- Botón para iniciar la búsqueda -->
+<button (click)="searchDocuments()">Buscar</button>
+
+<!-- Lista de documentos -->
+<ul>
+  <li *ngFor="let doc of documents">
+    <strong>{{ doc.fileName }}</strong> - {{ doc.fileExtension }}
+    <p>{{ doc.extractedText }}</p>
+  </li>
+</ul>

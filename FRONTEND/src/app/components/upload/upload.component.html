@@ -1,0 +1,12 @@
+<h2>Subir Documento</h2>
+
+<!-- Campo para seleccionar el archivo -->
+<input type="file" (change)="onFileSelected($event)" />
+
+<!-- Botón para subir el archivo -->
+<button (click)="onUpload()" [disabled]="!selectedFile">Subir</button>
+
+<!-- Mostrar mensajes al usuario -->
+<p *ngIf="message" [ngClass]="{'success': isSuccess, 'error': !isSuccess}">
+  {{ message }}
+</p>

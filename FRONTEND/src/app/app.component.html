@@ -1,0 +1,47 @@
+<!-- Header con el logo y título -->
+<header>
+  <div class="header-content">
+    <div class="header-title">
+      <h1>Bienvenidos al</h1>
+      <h2>MENÚ DE ATYR</h2>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <!-- Panel izquierdo -->
+  <div class="panel-izquierdo">
+    <h2>JUAN PÉREZ</h2>
+    <p>Ult. acceso {{ currentDate | date }}</p>
+
+    <!-- Buscador con estilo -->
+    <div class="buscador-container">
+      <input type="text" placeholder="Buscar" class="buscador" [(ngModel)]="searchKeywords">
+      <button class="btn-buscar" (click)="searchDocuments()">Buscar</button>
+    </div>
+
+    <!-- Botones estilo lista de opciones -->
+    <button (click)="goToUpload()">Cargar Documentos</button>
+    <button (click)="listDocuments()">Listar Documentos</button>
+  </div>
+
+  <!-- Tarjetas con los documentos a la derecha -->
+  <div class="tarjetas-container">
+    <div class="tarjeta" *ngFor="let document of documents" (click)="openModal(document)">
+      <h3>{{ document.fileName }}</h3>
+      <p>{{ document.extractedText | slice: 0: 50 }}...</p>
+    </div>
+  </div>
+</div>
+<!-- Modal para mostrar detalles del documento -->
+<div id="myModal" class="modal" #myModal>
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>Detalles del Documento</h2>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+
+<!-- Footer fijo -->
+<footer></footer>
